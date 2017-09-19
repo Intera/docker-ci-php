@@ -26,8 +26,7 @@ RUN apt-get update \
 		wget \
 		git \
 
-	&& chmod +x /tmp/install_composer.sh \
-	&& /tmp/install_composer.sh \
+	&& bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/ \
 
 	&& apt-get --purge autoremove \
