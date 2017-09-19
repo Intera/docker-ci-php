@@ -9,6 +9,7 @@ RUN apt-get update \
 	    php-cli \
 		php-curl \
 		php-gd \
+		php-igbinary \
 		php-intl \
 		php-json \
 		php-mbstring \
