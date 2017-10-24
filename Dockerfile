@@ -9,8 +9,7 @@ RUN apt-get update \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y \
 	&& apt-get install -y \
-		php5.6-apcu \
-	    php5.6-cli \
+		php5.6-cli \
 		php5.6-curl \
 		php5.6-gd \
 		php5.6-igbinary \
