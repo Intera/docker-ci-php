@@ -9,22 +9,22 @@ RUN apt-get update \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y \
 	&& apt-get install -y \
-		php5.6-apcu \
-	    php5.6-cli \
-		php5.6-curl \
-		php5.6-gd \
-		php5.6-igbinary \
-		php5.6-intl \
-		php5.6-json \
-		php5.6-mbstring \
-		php5.6-mcrypt \
-		php5.6-mysql \
-		php5.6-pgsql \
-		php5.6-soap \
-		php5.6-sqlite3 \
-		php5.6-xdebug \
-		php5.6-xml \
-		php5.6-zip \
+		php7.1-apcu \
+		php7.1-cli \
+		php7.1-curl \
+		php7.1-gd \
+		php7.1-igbinary \
+		php7.1-intl \
+		php7.1-json \
+		php7.1-mbstring \
+		php7.1-mcrypt \
+		php7.1-mysql \
+		php7.1-pgsql \
+		php7.1-soap \
+		php7.1-sqlite3 \
+		php7.1-xdebug \
+		php7.1-xml \
+		php7.1-zip \
 		imagemagick \
 		language-pack-de \
 		wget \
