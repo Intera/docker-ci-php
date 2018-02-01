@@ -29,6 +29,7 @@ RUN apt-get update \
 		language-pack-de \
 		wget \
 		git \
+		openssh-client \
 	&& bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/ \
 	&& apt-get purge -y software-properties-common python-software-properties \
