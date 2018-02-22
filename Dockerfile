@@ -16,6 +16,7 @@ RUN apt-get update \
 		php7.1-igbinary \
 		php7.1-intl \
 		php7.1-json \
+		php7.1-ldap \
 		php7.1-mbstring \
 		php7.1-mcrypt \
 		php7.1-mysql \
