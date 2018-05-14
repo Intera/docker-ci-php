@@ -19,7 +19,6 @@ RUN apt-get install -y \
 		php7.2-json \
 		php7.2-ldap \
 		php7.2-mbstring \
-		php7.2-mcrypt \
 		php7.2-mysql \
 		php7.2-pgsql \
 		php7.2-soap \
