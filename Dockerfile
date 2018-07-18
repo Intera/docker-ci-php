@@ -49,3 +49,6 @@ RUN apt-get purge -y software-properties-common python-software-properties \
 	&& apt-get autoclean \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
+
+# Disable xdebug by default to improve build performance!
+RUN phpdismod xdebug
