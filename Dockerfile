@@ -24,6 +24,7 @@ RUN apt-get install -y \
 		php7.2-soap \
 		php7.2-sqlite3 \
 		php7.2-xdebug \
+		php7.2-phpdbg \
 		php7.2-xml \
 		php7.2-zip \
 		imagemagick \
