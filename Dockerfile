@@ -7,8 +7,9 @@ RUN apt-get update \
 	&& apt-get install -y software-properties-common python-software-properties \
 	&& export LANG=C.UTF-8 \
 	&& add-apt-repository ppa:ondrej/php \
-	&& apt-get update -y \
-	&& apt-get install -y \
+	&& apt-get update -y
+
+RUN apt-get install -y \
 		php5.6-cli \
 		php5.6-curl \
 		php5.6-gd \
@@ -28,10 +29,12 @@ RUN apt-get update \
 		language-pack-de \
 		wget \
 		git \
-		openssh-client \
-	&& bash /tmp/install_composer.sh \
-	&& mv composer.phar /usr/local/bin/ \
-	&& apt-get purge -y software-properties-common python-software-properties \
+		openssh-client
+
+RUN bash /tmp/install_composer.sh \
+	&& mv composer.phar /usr/local/bin/
+
+RUN apt-get purge -y software-properties-common python-software-properties \
 	&& apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
