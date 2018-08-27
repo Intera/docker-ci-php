@@ -5,7 +5,8 @@ COPY install_composer.sh /tmp/install_composer.sh
 RUN apt-get update \
 	&& apt-get dist-upgrade -y
 
-RUN apt-get install -y \
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y \
 		php7.2-apcu \
 		php7.2-cli \
 		php7.2-curl \
