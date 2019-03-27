@@ -32,6 +32,7 @@ RUN apt-get install -y \
 		language-pack-de \
 		wget \
 		git \
+		unzip \
 		openssh-client
 
 RUN bash /tmp/install_composer.sh \
