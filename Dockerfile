@@ -25,6 +25,7 @@ RUN apt-get update \
 		language-pack-de \
 		wget \
 		git \
+		unzip \
 
 	&& bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/ \
