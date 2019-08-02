@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
 
 COPY install_composer.sh /tmp/install_composer.sh
 
@@ -10,23 +12,23 @@ RUN apt-get update \
 	&& apt-get update -y
 
 RUN apt-get install -y \
-		php7.2-apcu \
-		php7.2-cli \
-		php7.2-curl \
-		php7.2-gd \
-		php7.2-igbinary \
-		php7.2-intl \
-		php7.2-json \
-		php7.2-ldap \
-		php7.2-mbstring \
-		php7.2-mysql \
-		php7.2-pgsql \
-		php7.2-soap \
-		php7.2-sqlite3 \
-		php7.2-xdebug \
-		php7.2-phpdbg \
-		php7.2-xml \
-		php7.2-zip \
+		php7.3-apcu \
+		php7.3-cli \
+		php7.3-curl \
+		php7.3-gd \
+		php7.3-igbinary \
+		php7.3-intl \
+		php7.3-json \
+		php7.3-ldap \
+		php7.3-mbstring \
+		php7.3-mysql \
+		php7.3-pgsql \
+		php7.3-soap \
+		php7.3-sqlite3 \
+		php7.3-xdebug \
+		php7.3-phpdbg \
+		php7.3-xml \
+		php7.3-zip \
 		imagemagick \
 		language-pack-de \
 		wget \
