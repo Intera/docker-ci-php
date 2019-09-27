@@ -6,7 +6,7 @@ COPY install_composer.sh /tmp/install_composer.sh
 
 RUN apt-get update \
 	&& apt-get dist-upgrade -y \
-	&& apt-get install -y software-properties-common python-software-properties \
+	&& apt-get install -y software-properties-common \
 	&& export LANG=C.UTF-8 \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y
@@ -47,7 +47,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update && apt-get install -y yarn
 
-RUN apt-get purge -y software-properties-common python-software-properties \
+RUN apt-get purge -y software-properties-common \
 	&& apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
