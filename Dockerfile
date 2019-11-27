@@ -1,13 +1,13 @@
 FROM ubuntu:18.04
 
-ENV DEBIAN_FRONTEND noninteractive
-
 COPY install_composer.sh /tmp/install_composer.sh
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV LANG C.UTF-8
 
 RUN apt-get update \
 	&& apt-get dist-upgrade -y \
 	&& apt-get install -y software-properties-common \
-	&& export LANG=C.UTF-8 \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y
 
@@ -17,6 +17,7 @@ RUN apt-get install -y \
 		php7.3-curl \
 		php7.3-gd \
 		php7.3-igbinary \
+		php7.3-imap \
 		php7.3-intl \
 		php7.3-json \
 		php7.3-ldap \
@@ -34,21 +35,25 @@ RUN apt-get install -y \
 		wget \
 		git \
 		unzip \
-		openssh-client
+		openssh-client \
+		rsync \
+		curl \
+		apt-transport-https \
+		lsb-release \
+		gnupg
+
 
 RUN bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/
 
-RUN apt-get install -y curl \
-    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-    && apt-get install -y nodejs
-
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && apt-get update && apt-get install -y yarn
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
-RUN apt-get purge -y software-properties-common \
-	&& apt-get --purge -y autoremove \
+RUN apt-get install -y nodejs yarn
+
+RUN apt-get purge -y software-properties-common apt-transport-https lsb-release gnupg \
+    && apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
