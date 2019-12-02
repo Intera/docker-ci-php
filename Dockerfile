@@ -1,15 +1,14 @@
 FROM ubuntu:16.04
 
 COPY install_composer.sh /tmp/install_composer.sh
+COPY ondrej-ubuntu-php-xenial.list /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-RUN apt-get update \
-	&& apt-get dist-upgrade -y \
-	&& apt-get install -y software-properties-common python-software-properties \
-	&& add-apt-repository ppa:ondrej/php \
-	&& apt-get update -y
+RUN apt-key adv --keyserver keys.gnupg.net --recv-keys E5267A6C \
+    && apt-get update \
+    && apt-get dist-upgrade -y
 
 RUN apt-get install -y \
 		php5.6-apc \
