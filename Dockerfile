@@ -42,7 +42,6 @@ RUN apt-get install -y \
 		lsb-release \
 		gnupg
 
-
 RUN bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/
 
@@ -57,6 +56,9 @@ RUN apt-get purge -y software-properties-common python-software-properties lsb-r
 	&& apt-get autoclean \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
+
+# Configure default PHP version
+RUN update-alternatives --set php /usr/bin/php5.6
 
 # Disable xdebug by default to improve build performance!
 RUN phpdismod xdebug
