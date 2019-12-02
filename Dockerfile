@@ -53,7 +53,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 
 RUN apt-get install -y nodejs yarn
 
-RUN apt-get purge -y software-properties-common python-software-properties apt-transport-https lsb-release \
+RUN apt-get purge -y software-properties-common python-software-properties lsb-release \
     && apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
