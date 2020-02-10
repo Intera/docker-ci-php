@@ -33,6 +33,7 @@ RUN apt-get install -y \
 		git \
 		unzip \
 		openssh-client \
+		mysql-client \
 		rsync \
 		curl \
 		apt-transport-https \
