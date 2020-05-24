@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY install_composer.sh /tmp/install_composer.sh
 
@@ -6,10 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 RUN apt-get update \
-	&& apt-get dist-upgrade -y \
-	&& apt-get install -y software-properties-common \
-	&& add-apt-repository ppa:ondrej/php \
-	&& apt-get update -y
+	&& apt-get dist-upgrade -y
 
 RUN apt-get install -y \
 		php7.4-apcu \
