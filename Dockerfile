@@ -26,7 +26,9 @@ RUN apt-get install -y \
 		php7.2-xdebug \
 		php7.2-phpdbg \
 		php7.2-xml \
-		php7.2-zip \
+		php7.2-zip
+
+RUN apt-get install -y \
 		imagemagick \
 		language-pack-de \
 		wget \
@@ -38,8 +40,8 @@ RUN apt-get install -y \
 		curl \
 		apt-transport-https \
 		lsb-release \
-		gnupg
-
+		gnupg \
+		parallel
 
 RUN bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/
