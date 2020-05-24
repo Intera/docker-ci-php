@@ -28,19 +28,22 @@ RUN apt-get install -y \
 		php7.4-xdebug \
 		php7.4-phpdbg \
 		php7.4-xml \
-		php7.4-zip \
+		php7.4-zip
+
+RUN apt-get install -y \
 		imagemagick \
 		language-pack-de \
 		wget \
 		git \
 		unzip \
 		openssh-client \
+		mysql-client \
 		rsync \
 		curl \
 		apt-transport-https \
 		lsb-release \
-		gnupg
-
+		gnupg \
+		parallel
 
 RUN bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/
