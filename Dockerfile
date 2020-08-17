@@ -33,6 +33,7 @@ RUN apt-get install -y \
 		language-pack-de \
 		wget \
 		git \
+		zip \
 		unzip \
 		openssh-client \
 		mysql-client \
