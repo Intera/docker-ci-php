@@ -1,12 +1,18 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY install_composer.sh /tmp/install_composer.sh
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-RUN apt-get update \
-	&& apt-get dist-upgrade -y
+RUN apt-get update
+RUN apt-get -y install gnupg
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E5267A6C
+
+COPY ondrej-ubuntu-php-focal.list /etc/apt/sources.list.d/ondrej-ubuntu-php-focal.list
+RUN apt-get update
+
+RUN apt-get dist-upgrade -y
 
 RUN apt-get install -y \
 		php7.2-apcu \
