@@ -6,26 +6,29 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 RUN apt-get update \
-	&& apt-get dist-upgrade -y
+	&& apt-get dist-upgrade -y \
+	&& apt-get install -y software-properties-common \
+	&& add-apt-repository ppa:ondrej/php \
+	&& apt-get update -y
 
 RUN apt-get install -y \
-		php7.4-apcu \
-		php7.4-cli \
-		php7.4-curl \
-		php7.4-gd \
-		php7.4-imap \
-		php7.4-intl \
-		php7.4-json \
-		php7.4-ldap \
-		php7.4-mbstring \
-		php7.4-mysql \
-		php7.4-pgsql \
-		php7.4-soap \
-		php7.4-sqlite3 \
-		php7.4-xdebug \
-		php7.4-phpdbg \
-		php7.4-xml \
-		php7.4-zip
+		php8.0-apcu \
+		php8.0-cli \
+		php8.0-curl \
+		php8.0-gd \
+		php8.0-imap \
+		php8.0-intl \
+		php8.0-json \
+		php8.0-ldap \
+		php8.0-mbstring \
+		php8.0-mysql \
+		php8.0-pgsql \
+		php8.0-soap \
+		php8.0-sqlite3 \
+		php8.0-xdebug \
+		php8.0-phpdbg \
+		php8.0-xml \
+		php8.0-zip
 
 RUN apt-get install -y \
 		imagemagick \
