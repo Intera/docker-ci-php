@@ -1,14 +1,15 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 COPY install_composer.sh /tmp/install_composer.sh
-COPY ondrej-ubuntu-php-xenial.list /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
-RUN apt-key adv --keyserver keys.gnupg.net --recv-keys E5267A6C \
-    && apt-get update \
-    && apt-get dist-upgrade -y
+RUN apt-get update \
+	&& apt-get dist-upgrade -y \
+	&& apt-get install -y software-properties-common \
+	&& add-apt-repository ppa:ondrej/php \
+	&& apt-get update -y
 
 RUN apt-get install -y \
 		php5.6-apc \
@@ -29,18 +30,23 @@ RUN apt-get install -y \
 		php5.6-xdebug \
 		php5.6-phpdbg \
 		php5.6-xml \
-		php5.6-zip \
+		php5.6-zip
+
+RUN apt-get install -y \
 		imagemagick \
 		language-pack-de \
 		wget \
 		git \
+		zip \
 		unzip \
 		openssh-client \
+		mysql-client \
 		rsync \
 		curl \
 		apt-transport-https \
 		lsb-release \
-		gnupg
+		gnupg \
+		parallel
 
 RUN bash /tmp/install_composer.sh \
 	&& mv composer.phar /usr/local/bin/
@@ -51,7 +57,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 
 RUN apt-get install -y nodejs yarn
 
-RUN apt-get purge -y software-properties-common python-software-properties lsb-release \
+RUN apt-get purge -y software-properties-common apt-transport-https lsb-release gnupg \
     && apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
