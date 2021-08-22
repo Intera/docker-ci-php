@@ -7,4 +7,4 @@ The packages contain:
 * PHP (CLI) with many Extensions
 * Composer (at `/usr/local/bin/composer.phar`)
 * SSH Client (for running Deployments)
-* NodeJS (version 12)
+* NodeJS (version 14)
