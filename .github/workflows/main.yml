@@ -43,4 +43,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: intera/docker-ci-php:${{ env.DOCKER_TAG }}
+          tags: intera/ci-php:${{ env.DOCKER_TAG }},intera/docker-ci-php:${{ env.DOCKER_TAG }}
