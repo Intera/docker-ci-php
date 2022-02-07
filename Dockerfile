@@ -11,7 +11,7 @@ RUN apt-get update \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y
 
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
 		php5.6-apc \
 		php5.6-cli \
 		php5.6-curl \
