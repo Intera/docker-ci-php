@@ -11,7 +11,7 @@ RUN apt-get update \
 	&& add-apt-repository ppa:ondrej/php \
 	&& apt-get update -y
 
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
 		php8.0-apcu \
 		php8.0-cli \
 		php8.0-curl \
