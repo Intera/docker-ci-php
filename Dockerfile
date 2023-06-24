@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 COPY install_composer.sh /tmp/install_composer.sh
 
@@ -12,22 +12,22 @@ RUN apt-get update \
 	&& apt-get update -y
 
 RUN apt-get install -y --no-install-recommends \
-		php8.1-apcu \
-		php8.1-cli \
-		php8.1-curl \
-		php8.1-gd \
-		php8.1-imap \
-		php8.1-intl \
-		php8.1-ldap \
-		php8.1-mbstring \
-		php8.1-mysql \
-		php8.1-pgsql \
-		php8.1-soap \
-		php8.1-sqlite3 \
-		php8.1-xdebug \
-		php8.1-phpdbg \
-		php8.1-xml \
-		php8.1-zip
+		php8.2-apcu \
+		php8.2-cli \
+		php8.2-curl \
+		php8.2-gd \
+		php8.2-imap \
+		php8.2-intl \
+		php8.2-ldap \
+		php8.2-mbstring \
+		php8.2-mysql \
+		php8.2-pgsql \
+		php8.2-soap \
+		php8.2-sqlite3 \
+		php8.2-xdebug \
+		php8.2-phpdbg \
+		php8.2-xml \
+		php8.2-zip
 
 RUN apt-get install -y \
 		imagemagick \
@@ -50,7 +50,7 @@ RUN bash /tmp/install_composer.sh \
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && curl -sL https://deb.nodesource.com/setup_14.x | bash -
+    && curl -sL https://deb.nodesource.com/setup_18.x | bash -
 
 RUN apt-get install -y nodejs yarn
 
