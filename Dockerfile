@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY install_composer.sh /tmp/install_composer.sh
 
