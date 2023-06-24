@@ -4,7 +4,7 @@ name: Build and push to Docker Hub
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events but only for all branches
   push:
     branches: ['*']
 
@@ -27,13 +27,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Get docker tag for master
-        if: github.ref == 'refs/heads/master'
+      - name: Get docker tag for main
+        if: github.ref == 'refs/heads/main'
         shell: bash
         run: echo "DOCKER_TAG=latest" >> $GITHUB_ENV
 
       - name: Get branch for all other branches
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/main'
         shell: bash
         run: echo "DOCKER_TAG=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
 
