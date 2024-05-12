@@ -17,7 +17,7 @@ RUN apt-get install -y --no-install-recommends \
 		php8.1-curl \
 		php8.1-gd \
 		php8.1-imap \
-        php-imagick \
+        php8.1-imagick \
 		php8.1-intl \
 		php8.1-ldap \
 		php8.1-mbstring \
