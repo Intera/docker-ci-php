@@ -17,6 +17,7 @@ RUN apt-get install -y --no-install-recommends \
 		php8.1-curl \
 		php8.1-gd \
 		php8.1-imap \
+        php-imagick \
 		php8.1-intl \
 		php8.1-ldap \
 		php8.1-mbstring \
@@ -50,7 +51,7 @@ RUN bash /tmp/install_composer.sh \
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && curl -sL https://deb.nodesource.com/setup_14.x | bash -
+    && curl -sL https://deb.nodesource.com/setup_18.x | bash -
 
 RUN apt-get install -y nodejs yarn
 
