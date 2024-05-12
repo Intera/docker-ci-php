@@ -16,6 +16,7 @@ RUN apt-get install -y --no-install-recommends \
 		php8.2-cli \
 		php8.2-curl \
 		php8.2-gd \
+        php-imagick \
 		php8.2-imap \
 		php8.2-intl \
 		php8.2-ldap \
