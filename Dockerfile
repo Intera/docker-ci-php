@@ -12,23 +12,23 @@ RUN apt-get update \
 	&& apt-get update -y
 
 RUN apt-get install -y --no-install-recommends \
-		php8.3-apcu \
-		php8.3-cli \
-		php8.3-curl \
-		php8.3-gd \
-		php8.3-imap \
-        php8.3-imagick \
-		php8.3-intl \
-		php8.3-ldap \
-		php8.3-mbstring \
-		php8.3-mysql \
-		php8.3-pgsql \
-		php8.3-soap \
-		php8.3-sqlite3 \
-		php8.3-xdebug \
-		php8.3-phpdbg \
-		php8.3-xml \
-		php8.3-zip
+		php8.4-apcu \
+		php8.4-cli \
+		php8.4-curl \
+		php8.4-gd \
+		php8.4-imap \
+        php8.4-imagick \
+		php8.4-intl \
+		php8.4-ldap \
+		php8.4-mbstring \
+		php8.4-mysql \
+		php8.4-pgsql \
+		php8.4-soap \
+		php8.4-sqlite3 \
+		php8.4-xdebug \
+		php8.4-phpdbg \
+		php8.4-xml \
+		php8.4-zip
 
 RUN apt-get install -y \
 		imagemagick \
